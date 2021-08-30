@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(http://desktopwallpapers.org.ua/pic/201110/2560x1440/desktopwallpapers.org.ua-6800.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Выход</title>
+</head>
+<body>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm" class="center">
+        <img src="https://pbs.twimg.com/profile_banners/2473805786/1563259225/1500x500" border="0">
+        </div>
+    </div>
+    <div class = "container" class ="center">
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/CinemaList">Кинотеатры</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/FilmList">Фильмы</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/PersonList">Люди</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000">Главная</button></form></p>
+        </div>
+                {% if userstat != "user" and userstat != "moderator" and understat != "admin" %}
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/autorization">Вход</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/Registration">Регистрация</button></form></p>
+        </div>
+        {% endif %}
+    {% if userstat == "admin" or userstat == "moderator" or userstat == "user"%}
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-danger btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/exit">Выйти</button></form></p>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <p><h3>Вы действительно хотите выйти?</h3></p>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            {{ message }}
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <p><form><input type="submit" class="btn btn-danger btn-lg btn-block" class="text-center" name="des" value="Да"></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><input type="submit" class="btn btn-warning btn-lg btn-block" class="text-center" name="des" value="Нет"></form></p>
+        </div>
+                <div class="col-sm">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

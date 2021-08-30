@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(http://desktopwallpapers.org.ua/pic/201110/2560x1440/desktopwallpapers.org.ua-6800.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+        contanier
+        {
+            widht:80%
+        }
+    </style>
+    <title>Добавить кинотеатр</title>
+</head>
+<body>
+<p><h1 class="text-center">Добавление кинотеатра в систему</h1></p>
+<form method="get" action="" align="center">
+      <div class="contanier" class="center">
+
+          <p><h4>Введите уникальный номер кинотеатра</h4></p>
+          <p><input name="id" placeholder="ID"></p>
+  </div>
+  <div class="text-center">
+    <p><h4>Введите название кинотеатра</h4></p>
+    <input name="name" placeholder="Название">
+  </div>
+  <div class="center">
+      <p><h4>Введите адрес кинотеатра</h4></p>
+    <input name="location" placeholder="Адрес">
+  </div>
+  <div class="text-center">
+      <p><h4>Введите описание для кинотеатра</h4></p>
+    <textarea name="description" placeholder="Описание"></textarea>
+  </div>
+<button type="submit" class="btn btn-warning btn-lg btn-block" class="text-center">Подтвердить</button>
+</form>
+<p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AdminMain">Вернуться в меню</button></form></p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Административная панель</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(http://desktopwallpapers.org.ua/pic/201110/2560x1440/desktopwallpapers.org.ua-6800.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+<p><h1 class="text-center">Административная панель</h1></p>
+<p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AddCinema/">Добавить кинотеатр</button></form></p>
+<p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AddFilm/">Добавить фильм</button></form></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AddSeans/">Добавить сеанс</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AddPerson/">Добавить участника фильма</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/DeleteCinema/">Удалить кинотеатр</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/DeleteFilm/">Удалить фильм</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/DeleteSeans/">Удалить сеанс</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/DeletePerson/">Удалить участника фильма</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AddInFilm/">Добавить работника в фильм</button></p>
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/DeleteFromFilm/">Удалить работника из фильма</button></p>
+{% if userstat == admin %}
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/ChangeStatus/">Изменить статус пользователя</button></p>
+{% endif %}
+<p><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/">Назад на главную</button></p>
+</body>
+</html>

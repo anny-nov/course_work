@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(http://desktopwallpapers.org.ua/pic/201110/2560x1440/desktopwallpapers.org.ua-6800.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm" class="center">
+        <img src="https://pbs.twimg.com/profile_banners/2473805786/1563259225/1500x500" border="0">
+        </div>
+    </div>
+    <div class = "container" class ="center">
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/CinemaList">Кинотеатры</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/FilmList">Фильмы</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/PersonList">Люди</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/autorization">Вход</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000">Назад на главную</button></form></p>
+        </div>
+    </div>
+    </div>
+    <div class="row" class="center">
+        <div class="col-sm">
+        <p color ="#cc0000"><h3>{{ error }}</h3></p>
+        <form method="get" action="" align="center">
+            <div class="contanier" class="center">
+                <p><h4>Введите  логин: </h4></p>
+                <p><input name="login" placeholder="Логин"></p>
+  </div>
+  <div class="text-center">
+    <p><h4>Придумайте пароль: </h4></p>
+    <input name="password" placeholder="Пароль">
+  </div>
+            <div class="text-center">
+    <p><h4>Повторите пароль: </h4></p>
+    <input name="password2" placeholder="Пароль">
+  </div>
+    <div class="text-center">
+    <p><h4>Введите имя: </h4></p>
+    <input name="name" placeholder="Имя">
+  </div>
+            <div class="text-center">
+    <p><h4>Введите фамилию: </h4></p>
+    <input name="sername" placeholder="Фамилия">
+  </div>
+            <p></p>
+<button type="submit" class="btn btn-warning btn-lg" class="text-center">Подтвердить</button>
+</form>
+    </div>
+</div>
+    </div>
+</body>
+</html>

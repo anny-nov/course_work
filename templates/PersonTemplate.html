@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(http://desktopwallpapers.org.ua/pic/201110/2560x1440/desktopwallpapers.org.ua-6800.jpg);
+            background-size: 100%;
+            background-attachment: fixed;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+</head>
+<body>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm" class="center">
+        <img src="https://pbs.twimg.com/profile_banners/2473805786/1563259225/1500x500" border="0">
+        </div>
+    </div>
+    <div class = "container" class ="center">
+    <div class = "row" class ='center'>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/CinemaList">Кинотеатры</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/FilmList">Фильмы</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/PersonList">Люди</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000">Главная</button></form></p>
+        </div>
+        {% if userstat != "user" %}
+            {% if userstat != "moderator" %}
+                {% if userstat != "admin" %}
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/autorization">Вход</button></form></p>
+        </div>
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/Registration">Регистрация</button></form></p>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% if userstat == "admin" or userstat == "moderator" %}
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-warning btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/AdminMain">Админка</button></form></p>
+        </div>
+    {% endif %}
+    {% if userstat == "admin" or userstat == "moderator" or userstat == "user"%}
+        <div class="col-sm">
+            <p><form><button type="button" class="btn btn-danger btn-lg btn-block" class="text-center" onclick = location.href="http://127.0.0.1:8000/exit">Выйти</button></form></p>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-auto">
+        <p><img src ="{{ img }}"></p>
+    </div>
+<div class="col">
+    <h1>{{ name }}</h1>
+<p><h4>Деятельность: {{ work }} </h4></p>
+    <p>Работы:
+    <ul>
+        {% for i in films %}
+        <li>{{ i }}</li>
+        {% endfor %}
+</ul>
+    </p>
+</div>
+</div>
+{% if userstat == "user" or userstat == "moderator" %}
+<div class="row">
+    <div class="col-sm">
+        <p><h5>Оставьте комментарий: </h5></p>
+        <form>
+            <input type="hidden" name="page" value="{{ name }}">
+            <input type="hidden" name="login" value="{{ userlog }}">
+        <p><textarea name="text" placeholder="Комментарий" style="width: 95%"></textarea></p>
+            <p><button type="submit" class="btn btn-warning btn-lg" class="text-center">Отправить</button></p>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% if userstat == "admin" %}
+<div class="row">
+    <div class="col-sm">
+        <p><h5>Оставьте комментарий: </h5></p>
+        <form>
+            <input type="hidden" name="page" value="{{ name }}">
+            <input type="hidden" name="login" value="{{ userlog }}">
+        <p><textarea name="text" placeholder="Комментарий" style="width: 95%"></textarea></p>
+            <p><button type="submit" class="btn btn-warning btn-lg" class="text-center">Отправить</button></p>
+        </form>
+    </div>
+</div>
+{% endif %}
+<div class="row">
+    {% for i in comments %}
+       <span class="border border-primary" class="rounded" style="width:97%; display:block; margin-left: 2%;margin-bottom:5px">
+       <p><h5>{{ i.login }}</h5></p>
+       <p>{{ i.text }}</p>
+       </span>
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>
